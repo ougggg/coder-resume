@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欧国烽 - Java开发 / AI工程师</title>
+    <meta name="description" content="欧国烽的个人名片 - Java开发工程师 / AI应用后端工程师">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">O.G.F</div>
+            <ul class="nav-links">
+                <li><a href="#hero">首页</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#experience">经历</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#contact" class="btn-primary">联系我</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="greeting">你好，我是</p>
+                <h1 class="name">欧国烽</h1>
+                <div class="typing-container">
+                    <span class="static-text">我是一名 </span>
+                    <span class="dynamic-text"></span>
+                </div>
+                <p class="bio">
+                    专注于构建高可用后端系统与AI应用落地。
+                    擅长 Spring Boot 生态及 LangChain4j RAG 系统构建。
+                    追求代码与工程效能的极致平衡。
+                </p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn-primary">查看项目</a>
+                    <a href="https://paidaxing-1374913055.cos.ap-guangzhou.myqcloud.com/%E6%AC%A7%E5%9B%BD%E7%83%BD-%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88.pdf" class="btn-secondary" download="欧国烽-开发工程师.pdf">下载简历</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:2057160697@qq.com" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="img-wrapper">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=b6e3f4" alt="欧国烽 Avatar" class="profile-img">
+                    <!-- Note: In a real deployment, replace with the uploaded photo if hosted publicly, or keep this placeholder/avatar -->
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">专业技能 <span class="accent-dot">.</span></h2>
+            <div class="skills-grid">
+                <!-- Java Core -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fab fa-java"></i></div>
+                    <h3>Java 核心</h3>
+                    <p>扎实的并发与集合基础，熟练 Lambda/Stream 流。遵循阿里开发规范，注重代码优雅性。</p>
+                    <div class="tags">
+                        <span>JUC</span>
+                        <span>Stream API</span>
+                        <span>自定义注解</span>
+                    </div>
+                </div>
+                <!-- Frameworks -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>主流框架</h3>
+                    <p>精通 Spring Boot 开发，熟练整合 MyBatis-Plus。熟悉 Spring Security/JWT 认证体系。</p>
+                    <div class="tags">
+                        <span>Spring Boot</span>
+                        <span>MyBatis-Plus</span>
+                        <span>Spring Session</span>
+                    </div>
+                </div>
+                <!-- AI Engineering -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI 工程化</h3>
+                    <p>丰富的 LLM 应用落地经验。熟练使用 LangChain4j 构建 RAG 系统，具备 Agent 智能体开发经验。</p>
+                    <div class="tags">
+                        <span>LangChain4j</span>
+                        <span>RAG</span>
+                        <span>Prompt Engineering</span>
+                    </div>
+                </div>
+                <!-- Middleware -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>中间件与数据库</h3>
+                    <p>熟悉 MySQL 索引优化，Redis + Caffeine 多级缓存体系。掌握 WebSocket 实时通信。</p>
+                    <div class="tags">
+                        <span>MySQL</span>
+                        <span>Redis</span>
+                        <span>WebSocket</span>
+                        <span>COS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">实习经历 <span class="accent-dot">.</span></h2>
+            <div class="timeline">
+                
+                <!-- Experience 1 -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025.09 - 至今</div> <!-- Transcribing strictly from resume -->
+                    <div class="timeline-content">
+                        <h3>全栈开发工程师</h3>
+                        <h4>广州划时代智能科技发展有限公司</h4>
+                        <ul class="experience-list">
+                            <li><strong>架构搭建与效能：</strong> 主导平台从 0 到 1 全栈研发 (Spring Boot 3 + Vue 3)，引入 OpenAPI + AI 代码生成模式。</li>
+                            <li><strong>多租户 RAG 架构：</strong> 设计基于 RedisSearch 的逻辑隔离架构，实现单用户独立的知识库检索。</li>
+                            <li><strong>AIGC 与视觉集成：</strong> 在后端集成 OpenCV 实现人脸检测，对接大模型落地“人脸识别到风格迁移”链路。</li>
+                            <li><strong>IM 系统与 Agent：</strong> 构建 WebSocket 实时通信系统，采用复合索引 + 游标分页彻底解决海量消息分页页瓶颈。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025.07 - 2025.08</div>
+                    <div class="timeline-content">
+                        <h3>Java开发实习生</h3>
+                        <h4>广州粤嵌通信科技股份有限公司</h4>
+                        <p class="role-desc">铁路智能助手系统</p>
+                        <ul class="experience-list">
+                            <li><strong>Agent 工具链：</strong> 利用 LangChain4j 将 JDBC/MyBatis 封装为 AI 可调用的原子工具，实现 Text-to-SQL 能力。</li>
+                            <li><strong>RAG 政策问答：</strong> 构建轻量级向量知识库，对铁路退改签规则进行向量化处理，实现了基于语义的政策咨询功能。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2023.07 - 2023.09</div>
+                    <div class="timeline-content">
+                        <h3>经理助理</h3>
+                        <h4>广东渔晨农业科技有限公司</h4>
+                        <ul class="experience-list">
+                            <li>负责公司日常运营流程的协调与执行，优化跨部门沟通机制，提升团队协作效率。</li>
+                            <li>协助管理层进行项目进度追踪与资源统筹。</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">项目经历 <span class="accent-dot">.</span></h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card fade-in">
+                    <div class="card-header">
+                        <span class="project-type">企业级云图库平台</span>
+                        <h3>企业级智能云图之家</h3>
+                        <span class="date">2025.04 - 2025.06</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="project-desc">
+                            基于 Spring Boot 的高可用、易扩展的云图库系统。系统核心围绕用户、图片和空间三大模块，构建了企业级云图库平台。
+                        </p>
+                        <div class="tech-stack">
+                            <span>Spring Boot</span>
+                            <span>MyBatis-Plus</span>
+                            <span>Redis</span>
+                            <span>Caffeine</span>
+                            <span>CompletableFuture</span>
+                            <span>阿里云OSS</span>
+                        </div>
+                        <ul class="project-details">
+                            <li><strong>多级缓存架构：</strong> 设计 Caffeine + Redis 二级缓存体系，接口响应速度提升 400%。</li>
+                            <li><strong>AI 工程化：</strong> 深度集成阿里云千问大模型，实现文生图、扩图及人物风格重绘。</li>
+                            <li><strong>高并发数据采集：</strong> 利用 Jsoup + CompletableFuture 构建高并发爬虫。</li>
+                            <li><strong>数据一致性：</strong> 采用 Redis SCAN 异步清理策略保证数据一致性。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card fade-in">
+                    <div class="card-header">
+                        <span class="project-type">综合服务系统</span>
+                        <h3>智慧便民服务平台</h3>
+                        <span class="date">2025.02 - 2025.04</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="project-desc">
+                            含政务办理、医疗预约及 AI 智能助手三大模块。利用 RAG 技术提供 24 小时智能咨询服务。
+                        </p>
+                        <div class="tech-stack">
+                            <span>Spring Boot 3</span>
+                            <span>LangChain4j</span>
+                            <span>RedisSearch</span>
+                            <span>Spring Session</span>
+                            <span>MySQL</span>
+                        </div>
+                        <ul class="project-details">
+                            <li><strong>AI 智能助手集成：</strong> 基于 LangChain4j 快速对接通义千问大模型，利用 RedisSearch 存储知识库向量。</li>
+                            <li><strong>业务流程与并发控制：</strong> 针对预约挂号场景，采用 MySQL 乐观锁 (CAS) 机制防止库存超卖。</li>
+                            <li><strong>通用模块与权限设计：</strong> 利用 Spring AOP + 自定义注解搭建轻量级权限校验组件。</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="contact-info">
+                <h2>保持联系</h2>
+                <p>正在寻找新的挑战与机会。如果您对我的经历感兴趣，欢迎随时联系。</p>
+                <a href="mailto:2057160697@qq.com" class="email-link">2057160697@qq.com</a>
+                <p class="phone">17725721561</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 欧国烽. All rights reserved.</p>
+                <p>Designed & Built with AI Assistance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
