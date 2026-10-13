@@ -12,72 +12,77 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="assets/fairyland.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="assets/fonts/noto-serif-sc-400-subset.woff2" as="font" type="font/woff2" crossorigin>
+    <noscript><style>*,*::before,*::after{animation:none!important}.menu-toggle,.motion-toggle{display:none}.nav-links{position:static;visibility:visible;opacity:1;transform:none;flex-direction:row;flex-wrap:wrap;padding:0;background:none}.nav-content{height:auto;min-height:74px;flex-wrap:wrap;padding-block:14px}.nav-links a{font-size:11px;padding:5px}.nav-links a>span{display:none}.nav-links .nav-contact{margin:0;padding:5px 10px}.navbar{position:relative;background:#0a1718}.hero-content{padding-top:60px}</style></noscript>
 </head>
 <body>
+    <a class="skip-link" href="#skills">跳到主要内容</a>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-content">
-            <div class="logo">O.G.F</div>
-            <ul class="nav-links">
-                <li><a href="#hero">首页</a></li>
-                <li><a href="#skills">技能</a></li>
-                <li><a href="#experience">经历</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#contact" class="btn-primary">联系我</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a class="logo" href="#hero" aria-label="欧国烽，返回首页"><span class="logo-symbol" aria-hidden="true">✳</span> O.G.F<span class="logo-caption">代码 · 山海 · 想象</span></a>
+            <div class="nav-actions">
+                <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false"><span class="motion-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span data-motion-label>暂停动效</span></button>
+                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="展开导航" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
             </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="active" aria-current="location">首页<span>Home</span></a></li>
+                <li><a href="#skills">技能<span>Expertise</span></a></li>
+                <li><a href="#experience">经历<span>Journey</span></a></li>
+                <li><a href="#projects">项目<span>Works</span></a></li>
+                <li><a href="#contact" class="nav-contact">聊聊想法 <span aria-hidden="true">↗</span></a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-section">
+    <main>
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-scene" aria-hidden="true">
+            <div class="scene-parallax"><div class="landscape"></div></div>
+            <div class="scene-shade"></div>
+            <div class="mist mist-back"></div>
+            <div class="mist mist-front"></div>
+            <div class="moon-halo"></div>
+            <canvas id="fireflies"></canvas>
+            <div class="scene-grain"></div>
+        </div>
         <div class="container hero-content">
             <div class="hero-text">
-                <p class="greeting">你好，我是</p>
-                <h1 class="name">欧国烽</h1>
-                <div class="typing-container">
-                    <span class="static-text">我是一名 </span>
-                    <span class="dynamic-text"></span>
+                <p class="greeting"><span class="greeting-line"></span> A DEVELOPER'S WORLD <span class="greeting-index">/ 01</span></p>
+                <h1 id="hero-title" class="hero-title">以代码筑境，<br><em>让想象生长。</em></h1>
+                <div class="hero-identity">
+                    <p class="identity-name"><span>你好，我是</span> <strong>欧国烽</strong></p>
+                    <p class="hero-role"><span>Java 开发工程师</span><span class="role-divider" aria-hidden="true">/</span><span>AI 应用后端工程师</span></p>
                 </div>
                 <p class="bio">
-                    专注于构建高可用后端系统与AI应用落地。
-                    擅长 Spring Boot 生态及 LangChain4j RAG 系统构建。
+                    专注于构建高可用后端系统与 AI 应用落地。<br>
+                    擅长 Spring Boot 生态及 LangChain4j RAG 系统构建。<br>
                     追求代码与工程效能的极致平衡。
                 </p>
                 <div class="cta-buttons">
-                    <a href="#projects" class="btn-primary">查看项目</a>
-                    <a href="https://paidaxing-1374913055.cos.ap-guangzhou.myqcloud.com/%E6%AC%A7%E5%9B%BD%E7%83%BD-%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88.pdf" class="btn-secondary" download="欧国烽-开发工程师.pdf">下载简历</a>
+                    <a href="#projects" class="btn-primary">探索我的作品 <span aria-hidden="true">↗</span></a>
+                    <a href="https://paidaxing-1374913055.cos.ap-guangzhou.myqcloud.com/%E6%AC%A7%E5%9B%BD%E7%83%BD-%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88.pdf" class="btn-secondary" download="欧国烽-开发工程师.pdf">下载简历 <span aria-hidden="true">↓</span></a>
                 </div>
-                <div class="social-links">
-                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:2057160697@qq.com" title="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="img-wrapper">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=b6e3f4" alt="欧国烽 Avatar" class="profile-img">
-                    <!-- Note: In a real deployment, replace with the uploaded photo if hosted publicly, or keep this placeholder/avatar -->
-                </div>
+                <p class="hero-note"><span class="status-dot"></span> 全栈开发 · 保持好奇，持续构建</p>
             </div>
         </div>
-        <div class="scroll-down">
-            <i class="fas fa-chevron-down"></i>
+        <div class="scene-caption" aria-hidden="true"><span>山海有境 · 代码无界</span><span class="scene-caption-line"></span><small>THE QUIET SIDE OF CREATION</small></div>
+        <div class="container hero-bottom">
+            <a class="scroll-down" href="#skills"><span class="scroll-icon" aria-hidden="true">↓</span><span>向下，探索更多<small>SCROLL TO EXPLORE</small></span></a>
+            <span class="scene-location" aria-hidden="true">月色入山海 <span>·</span> 灵感入代码</span>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">专业技能 <span class="accent-dot">.</span></h2>
+            <div class="section-heading fade-in"><div><p class="eyebrow"><span class="section-label">专业技能</span> 01 / EXPERTISE</p><h2 class="section-title">向下扎根，<span>向上生长。</span></h2></div><p class="section-intro">从扎实的工程基础，到 AI 的无限可能。<br>以技术为土壤，让每个想法落地生根。</p></div>
             <div class="skills-grid">
                 <!-- Java Core -->
                 <div class="skill-card fade-in">
-                    <div class="skill-icon"><i class="fab fa-java"></i></div>
+                    <div class="skill-top"><div class="skill-icon" aria-hidden="true">{}</div><span>01</span></div>
                     <h3>Java 核心</h3>
                     <p>扎实的并发与集合基础，熟练 Lambda/Stream 流。遵循阿里开发规范，注重代码优雅性。</p>
                     <div class="tags">
@@ -88,7 +93,7 @@
                 </div>
                 <!-- Frameworks -->
                 <div class="skill-card fade-in">
-                    <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="skill-top"><div class="skill-icon" aria-hidden="true">▱</div><span>02</span></div>
                     <h3>主流框架</h3>
                     <p>精通 Spring Boot 开发，熟练整合 MyBatis-Plus。熟悉 Spring Security/JWT 认证体系。</p>
                     <div class="tags">
@@ -99,7 +104,7 @@
                 </div>
                 <!-- AI Engineering -->
                 <div class="skill-card fade-in">
-                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <div class="skill-top"><div class="skill-icon" aria-hidden="true">✳</div><span>03</span></div>
                     <h3>AI 工程化</h3>
                     <p>丰富的 LLM 应用落地经验。熟练使用 LangChain4j 构建 RAG 系统，具备 Agent 智能体开发经验。</p>
                     <div class="tags">
@@ -110,7 +115,7 @@
                 </div>
                 <!-- Middleware -->
                 <div class="skill-card fade-in">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <div class="skill-top"><div class="skill-icon" aria-hidden="true">⌘</div><span>04</span></div>
                     <h3>中间件与数据库</h3>
                     <p>熟悉 MySQL 索引优化，Redis + Caffeine 多级缓存体系。掌握 WebSocket 实时通信。</p>
                     <div class="tags">
@@ -127,7 +132,7 @@
     <!-- Experience Section -->
     <section id="experience" class="section alt-bg">
         <div class="container">
-            <h2 class="section-title">实习经历 <span class="accent-dot">.</span></h2>
+            <div class="section-heading fade-in"><div><p class="eyebrow"><span class="section-label">实习经历</span> 02 / MY JOURNEY</p><h2 class="section-title">走过的路，<span>皆为养分。</span></h2></div><p class="section-intro">在真实的业务里打磨技术，<br>在每一次探索中，拓宽自己的边界。</p></div>
             <div class="timeline">
                 
                 <!-- Experience 1 -->
@@ -141,7 +146,7 @@
                             <li><strong>架构搭建与效能：</strong> 主导平台从 0 到 1 全栈研发 (Spring Boot 3 + Vue 3)，引入 OpenAPI + AI 代码生成模式。</li>
                             <li><strong>多租户 RAG 架构：</strong> 设计基于 RedisSearch 的逻辑隔离架构，实现单用户独立的知识库检索。</li>
                             <li><strong>AIGC 与视觉集成：</strong> 在后端集成 OpenCV 实现人脸检测，对接大模型落地“人脸识别到风格迁移”链路。</li>
-                            <li><strong>IM 系统与 Agent：</strong> 构建 WebSocket 实时通信系统，采用复合索引 + 游标分页彻底解决海量消息分页页瓶颈。</li>
+                            <li><strong>IM 系统与 Agent：</strong> 构建 WebSocket 实时通信系统，采用复合索引 + 游标分页彻底解决海量消息分页瓶颈。</li>
                         </ul>
                     </div>
                 </div>
@@ -182,16 +187,17 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">项目经历 <span class="accent-dot">.</span></h2>
+            <div class="section-heading fade-in"><div><p class="eyebrow"><span class="section-label">项目作品</span> 03 / SELECTED WORKS</p><h2 class="section-title">让想法，<span>有迹可循。</span></h2></div><p class="section-intro">把代码写进现实，<br>构建有温度、能解决问题的作品。</p></div>
             <div class="projects-grid">
                 
                 <!-- Project 1 -->
-                <div class="project-card fade-in">
+                <article class="project-card fade-in" aria-labelledby="cloud-project-title">
                     <div class="card-header">
-                        <span class="project-type">企业级云图库平台</span>
-                        <h3>企业级智能云图之家</h3>
+                        <p class="project-kicker"><span class="project-type">企业级云图库平台</span><span class="project-number" aria-hidden="true">01</span></p>
+                        <h3 id="cloud-project-title">企业级智能云图之家</h3>
                         <span class="date">2025.04 - 2025.06</span>
                     </div>
+                    <div class="project-outcome"><p class="outcome-value">400<span>%</span></p><div><p class="outcome-label">接口响应速度提升</p><p class="outcome-note">Caffeine + Redis 多级缓存</p></div></div>
                     <div class="card-body">
                         <p class="project-desc">
                             基于 Spring Boot 的高可用、易扩展的云图库系统。系统核心围绕用户、图片和空间三大模块，构建了企业级云图库平台。
@@ -204,22 +210,26 @@
                             <span>CompletableFuture</span>
                             <span>阿里云OSS</span>
                         </div>
+                        <details class="project-disclosure">
+                        <summary><span class="summary-closed">查看技术实现</span><span class="summary-open">收起技术实现</span><span class="summary-symbol" aria-hidden="true">+</span></summary>
                         <ul class="project-details">
                             <li><strong>多级缓存架构：</strong> 设计 Caffeine + Redis 二级缓存体系，接口响应速度提升 400%。</li>
                             <li><strong>AI 工程化：</strong> 深度集成阿里云千问大模型，实现文生图、扩图及人物风格重绘。</li>
                             <li><strong>高并发数据采集：</strong> 利用 Jsoup + CompletableFuture 构建高并发爬虫。</li>
                             <li><strong>数据一致性：</strong> 采用 Redis SCAN 异步清理策略保证数据一致性。</li>
                         </ul>
+                        </details>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 2 -->
-                <div class="project-card fade-in">
+                <article class="project-card fade-in" aria-labelledby="service-project-title">
                     <div class="card-header">
-                        <span class="project-type">综合服务系统</span>
-                        <h3>智慧便民服务平台</h3>
+                        <p class="project-kicker"><span class="project-type">综合服务系统</span><span class="project-number" aria-hidden="true">02</span></p>
+                        <h3 id="service-project-title">智慧便民服务平台</h3>
                         <span class="date">2025.02 - 2025.04</span>
                     </div>
+                    <div class="project-outcome"><p class="outcome-value">24<span>h</span></p><div><p class="outcome-label">全天候智能咨询</p><p class="outcome-note">LangChain4j + RAG 知识检索</p></div></div>
                     <div class="card-body">
                         <p class="project-desc">
                             含政务办理、医疗预约及 AI 智能助手三大模块。利用 RAG 技术提供 24 小时智能咨询服务。
@@ -231,29 +241,35 @@
                             <span>Spring Session</span>
                             <span>MySQL</span>
                         </div>
+                        <details class="project-disclosure">
+                        <summary><span class="summary-closed">查看技术实现</span><span class="summary-open">收起技术实现</span><span class="summary-symbol" aria-hidden="true">+</span></summary>
                         <ul class="project-details">
                             <li><strong>AI 智能助手集成：</strong> 基于 LangChain4j 快速对接通义千问大模型，利用 RedisSearch 存储知识库向量。</li>
                             <li><strong>业务流程与并发控制：</strong> 针对预约挂号场景，采用 MySQL 乐观锁 (CAS) 机制防止库存超卖。</li>
                             <li><strong>通用模块与权限设计：</strong> 利用 Spring AOP + 自定义注解搭建轻量级权限校验组件。</li>
                         </ul>
+                        </details>
                     </div>
-                </div>
+                </article>
 
             </div>
         </div>
     </section>
 
+    </main>
     <footer id="contact">
         <div class="container footer-content">
-            <div class="contact-info">
-                <h2>保持联系</h2>
+            <div class="contact-info fade-in">
+                <p class="eyebrow"><span class="section-label">保持联系</span> 04 / LET'S CONNECT</p>
+                <span class="contact-star" aria-hidden="true">✳</span>
+                <h2>下一段奇妙旅程，<br><span>从一次对话开始。</span></h2>
                 <p>正在寻找新的挑战与机会。如果您对我的经历感兴趣，欢迎随时联系。</p>
-                <a href="mailto:2057160697@qq.com" class="email-link">2057160697@qq.com</a>
-                <p class="phone">17725721561</p>
+                <a href="mailto:2057160697@qq.com" class="email-link">2057160697@qq.com <span aria-hidden="true">↗</span></a>
+                <a class="phone" href="tel:17725721561">177 2572 1561</a>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 欧国烽. All rights reserved.</p>
-                <p>Designed & Built with AI Assistance.</p>
+                <p>心有山海，创造不息。 <span class="footer-flower" aria-hidden="true">✳</span></p>
             </div>
         </div>
     </footer>
