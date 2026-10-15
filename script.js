@@ -431,11 +431,78 @@
         update();
     }
 
+    function createSystemExplorer() {
+        const lab = document.querySelector('.system-lab');
+        if (!lab) return;
+        const list = lab.querySelector('.flow-stages');
+        const steps = [...lab.querySelectorAll('[data-flow-step]')];
+        const panels = steps.map(step => document.getElementById(step.hash.slice(1)));
+        if (panels.some(panel => !panel)) return;
+        list.setAttribute('role', 'tablist');
+        list.setAttribute('aria-label', 'RAG 请求链路');
+        steps.forEach((step, index) => {
+            step.id = `flow-tab-${index}`;
+            step.setAttribute('role', 'tab');
+            step.setAttribute('aria-controls', panels[index].id);
+            panels[index].setAttribute('role', 'tabpanel');
+            panels[index].setAttribute('aria-labelledby', step.id);
+            panels[index].tabIndex = 0;
+        });
+        const select = (index, focus = false) => {
+            steps.forEach((step, current) => {
+                const selected = current === index;
+                step.setAttribute('aria-selected', String(selected));
+                step.tabIndex = selected ? 0 : -1;
+                panels[current].hidden = !selected;
+            });
+            if (focus) steps[index].focus({ preventScroll: true });
+        };
+        steps.forEach((step, index) => {
+            step.addEventListener('click', event => {
+                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                event.preventDefault();
+                select(index);
+            });
+            step.addEventListener('keydown', event => {
+                let next;
+                if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % steps.length;
+                if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (index + steps.length - 1) % steps.length;
+                if (event.key === 'Home') next = 0;
+                if (event.key === 'End') next = steps.length - 1;
+                if (event.key === ' ') next = index;
+                if (next === undefined) return;
+                event.preventDefault();
+                select(next, true);
+            });
+        });
+        const selectFromHash = () => {
+            const index = panels.findIndex(panel => `#${panel.id}` === window.location.hash);
+            if (index !== -1) select(index);
+        };
+        select(0);
+        selectFromHash();
+        window.addEventListener('hashchange', selectFromHash);
+        lab.classList.add('is-enhanced');
+        let visible = false;
+        const sync = () => lab.classList.toggle('flow-idle', !visible || document.hidden);
+        document.addEventListener('visibilitychange', sync);
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(entries => {
+                visible = entries[0].isIntersecting;
+                sync();
+            }).observe(lab);
+        } else {
+            visible = true;
+        }
+        sync();
+    }
+
     function initialize() {
         const motion = createMotionPreference();
         const menu = createMenu();
         const scene = createScene(motion);
         createReveals(motion);
+        createSystemExplorer();
         observeViewport(scene, menu, createNavigation());
         // Content starts visible; CSS reveals activate only after setup succeeds.
         document.body.classList.add('motion-ready');
